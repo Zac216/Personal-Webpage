@@ -1,0 +1,91 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url('Images/website background tmp.jpg');
+    opacity: 1;
+    transition: 1s opacity;
+}
+    body.fade-out {
+        opacity: 0;
+        transition: none;
+    }
+#body2{
+    display: none;
+}
+
+
+
+#headerBox {
+    background-color: lightblue;
+    overflow: auto;
+    padding: 15px 15px;
+}
+
+.headerItems {
+    background-color: aquamarine;
+    width: 20%;
+    float: left;
+    padding: 15px 0px;
+    margin: 0px 6.66666%;
+    text-align: center;
+    font-size: 2vw;
+    border-radius: 25px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+
+#introduction {
+
+    position: absolute;
+    height: auto;
+    background-color: lightgreen;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
+    width: 60%;
+}
+#introduction1 {
+    margin-top: 2vw;
+    font-size: 3vw;
+    margin-bottom: 2vw;
+}
+#introduction2 {
+    font-size: 2vw;
+    margin: auto;
+    margin-bottom: 2vw;
+}
+.projectItem {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    width: 90%;
+    background-color: gray;
+    font-size: 2vw;
+    text-align: center;
+}
+#engineeringProjects {
+    width:50%;
+    float: left;
+    text-align: center;
+    background-color:green;
+    height:900px;
+}
+#programmingProjects {
+    width: 50%;
+    float: left;
+    text-align: center;
+    background-color: blue;
+    height: 900px;
+}
+#fadeToBlack1 {
+    position: absolute;
+    background-color: black;
+}
+
+
