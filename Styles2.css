@@ -1,16 +1,20 @@
 ﻿body {
     margin: 0;
     padding: 0;
-    background-image: url('Images/website background tmp.jpg');
     opacity: 1;
     transition: 1s opacity;
+    font-family: "Times New Roman", Times, serif;
 }
     body.fade-out {
         opacity: 0;
         transition: none;
     }
-#body2{
+#body2 {
     display: none;
+    font-size: 2vw;
+    overflow: hidden;
+    width: 100%;
+    background-color: #303030;
 }
 
 
@@ -41,7 +45,8 @@ a {
 
     position: absolute;
     height: auto;
-    background-color: lightgreen;
+    background-color: lightslategray;
+    border-radius: 2vw;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -60,32 +65,109 @@ a {
     margin-bottom: 2vw;
 }
 .projectItem {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
     padding-top: 2vw;
     padding-bottom: 2vw;
-    width: 90%;
+    width: 95%;
     background-color: gray;
     font-size: 2vw;
-    text-align: center;
+    
 }
 #engineeringProjects {
-    width:50%;
+    width: 50%;
     float: left;
-    text-align: center;
-    background-color:green;
-    height:900px;
+    
+    padding-top:1vw;
 }
 #programmingProjects {
     width: 50%;
     float: left;
-    text-align: center;
-    background-color: blue;
-    height: 900px;
+    
+    padding-top: 1vw;
+}
+.grayBackground {
+    overflow: hidden;
+    width: 100%;
+    background-color: #303030;
 }
 #fadeToBlack1 {
     position: absolute;
     background-color: black;
 }
+.items {
+    margin: auto;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    width: 98%;
+    margin-bottom: 2%;
+    padding-bottom: 1vw;
+}
+.image{
+    width: 100%;
+    background-repeat: round;
+}
+#androidImage {
+    width: 50%;
+}
+#currentLifeImage {
+    width: 20%;
+    background-color: red;
+}
+.bulletItem {
+    padding-left: 1em;
+    font-size: 80%;
+    padding-right: 1em;
+}
+.bigBulletItem {
+    font-size: 130%;
+    text-align: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+.mediumBulletItem {
+    font-size: 115%;
+    text-align: center;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+.aboutMeText {
+    width: 70%;
+    float: left;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2.5%;
+    font-size: 80%;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+}
+.aboutMeSpace {
+    width: 27.5%;
+    float: left;
+}
+.aboutMeImage {
+    margin: auto;
+    width: 80%;
+}
+.aboutMeSection {
+    margin-top: 1%;
+    overflow: auto;
+}
 
 
+.imgTest {
+    width: 200px;
+    float: left;
+    padding: 10px;
+}
+.divTest {
+    background-color:aqua;
+    overflow: auto;
+}
+
+input[type="text"]textarea {
+    width: 20%;
+}
