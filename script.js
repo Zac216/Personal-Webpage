@@ -25,7 +25,7 @@
 
 
     ///////////////////////////////////////////////////////////////Fade out and transition to the clicked page
-    $('a').click(function () { 
+    $('.headerItems a').click(function () { 
 
         event.preventDefault();
         newLocation = this.href;
@@ -73,7 +73,7 @@
         }
         
 
-        console.log("engineering=" + isOnEngineering + ", programming" + isOnProgramming + ", %=" + percentPageDown);
+        //console.log("engineering=" + isOnEngineering + ", programming" + isOnProgramming + ", %=" + percentPageDown);
 
 
         /////////////// on engineering

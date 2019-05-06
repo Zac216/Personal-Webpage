@@ -21,18 +21,20 @@ if(IsInjected($visitor_email))
     exit;
 }
 
-$email_from = 'zach.schweikert1@gmail.com';//<== update the email address
+$email_from = 'zach.schweikert1@gmail.com';//<== Email address that the website uses (change in xampp)
 $email_subject = "New Form submission";
-$email_body = "You have received a new message from the user $name.\n".
-    "Here is the message:\n $message".
+$email_body = "You have received a new message from the user \"$name\" on your website.\n".
+    "Reply to $visitor_email.\n".
+    "Start of message:\n\n $message".
+    "\n\nEnd of message.";
     
-$to = "zach.schweikert@gmail.com";//<== update the email address
+$to = "zach.schweikert@gmail.com";//<== Email that website sends email to
 $headers = "From: $email_from \r\n";
 $headers .= "Reply-To: $visitor_email \r\n";
 //Send the email!
 mail($to,$email_subject,$email_body,$headers);
 //done. redirect to thank-you page.
-//header('Location: contact.html');
+header('Location: thanks.html');
 echo "mailed sucessfuly";
 
 

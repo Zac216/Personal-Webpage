@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="Styles2.css">
     <script src="jquery-3.3.1.min.js"></script>
     <script src="script.js"></script>
-    <script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
+    <script src="gen_validatorv4.js"></script>
     <meta charset="utf-8" />
 
 
@@ -46,22 +46,27 @@
             Try it out and send me an email!
         </div>
 
-        <div class="items" style="padding-left: 2.5%;">
-            <form method="post" name="myemailform" action="contact.php">
-                <p>
-                    <label for='name'>Your name: </label>
-                    <input type="text" name="name">
-                
-                    <label for='email'>Your email:</label>
-                    <input type="text" name="email">
-                </p>
-                <p>
-                    <label for='message'>Message Body:</label> <br>
-                    <textarea name="message"></textarea>
-                </p>
+        <div class="items">
+            <form method="post" name="myemailform" action="contact.php" style="padding-Left: 2.5%; padding-top: 1vw;">
+                <div>
+                    <label for='name' style="width: 10%;">Your name:</label>
+                    <input type="text" name="name" style="width: 15%;">
+                    (So I know who I'm talking to)
+                </br>
+                    <label for='email' style="width: 10%;">Your email:</label>
+                    <input type="text" name="email" style="width: 15%;">
+                    (So I know how to reply to you)
+                </div>
+                <div>
+                    <label for='message' style="padding-top: 1vw; padding-bottom: 1vw;">Message Body: (You can press
+                    the enter key while in the message field)</label>
+                    <div style="margin-right: 2.5%;">
+                    <textarea name="message" style="width: 100%; height: 8vw;"></textarea>
+                    </div>
+                </div>
                 <input type="submit" name='submit' value="submit">
             </form>
-            <script language="JavaScript">
+            <script>
             // Code for validating the form
             // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
             // for details
@@ -69,6 +74,7 @@
             frmvalidator.addValidation("name","req","Please provide your name"); 
             frmvalidator.addValidation("email","req","Please provide your email"); 
             frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+            frmvalidator.addValidation("message", "req", "Please make sure to enter a message");
             </script>
         </div>
 
