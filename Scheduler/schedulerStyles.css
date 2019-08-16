@@ -1,0 +1,14 @@
+table {
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 3%;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+    font-size: 120%;
+    text-align: center;
+  }
+  td {
+      width: 12.5%;
+  }
