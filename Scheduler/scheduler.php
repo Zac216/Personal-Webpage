@@ -29,10 +29,11 @@
         <td><input type="text" name="name" placeholder="New Name" required></td>
         <td>
             <select name="day">
-            <option value="Friday">Friday</option>
-            <option value="Monday">Monday</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
             </select>
         </td>
         <td><input type="time" name="timestart" min="07:30" max="17:00" value="07:30"></td>
@@ -109,7 +110,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT name, day, timestart, timestop FROM employeeschedules";
+$sql = "SELECT name, day, timestart, timestop FROM employeeschedules ORDER BY
+CASE day
+   WHEN 'Monday' THEN 1
+   WHEN 'Tuesday' THEN 2
+   WHEN 'Wednesday' THEN 3
+   WHEN 'Thursday' THEN 4
+   ELSE 5
+END, name, timestart";
 $result = $conn->query($sql);
 
 $workable = array(
@@ -119,6 +127,7 @@ $workable = array(
     array(),//thursday
     array()//friday
 );
+$hours = array();
 
 if ($result->num_rows > 0) {
     // output data of each row
@@ -142,15 +151,32 @@ if ($result->num_rows > 0) {
                 $row['day'] = 4;
                 break;
         }
-        $workable[$row['day']][$i++] = $row['name'];
+        array_push($workable[$row['day']], $row['name']);
+        
+        if (!(array_key_exists($row['name'], $hours))) {
+            $hours[$row['name']] = 0;
+        }
+        echo $row['timestop'] . "-" . $row['timestart'];
+        //$hours[$row['name']] += $row['timestop'] - $row['timestart'];
+
     }
 } else {
     echo "no data";
 }
 $conn->close();
 
-$keys = array_keys($workable);
-print_r($workable);
+
+    print_r($hours);
+
+
+
+for ($i = 0; $i < count($workable); $i++) {
+    echo "<br>day-" . $i . ": ";
+    for ($a = 0; $a < count($workable[$i]); $a++) {
+        echo $workable[$i][$a];
+    }
+}
+
 
 
 
